@@ -22,15 +22,15 @@ public class Robot extends TimedRobot {
    * initialization code.
    */
 
-  WPI_TalonSRX m_left = new WPI_TalonSRX(1);
-  WPI_TalonSRX m_right = new WPI_TalonSRX(3);
-  WPI_TalonSRX m_rightFollow = new WPI_TalonSRX(4);
-  WPI_TalonSRX m_leftFollow = new WPI_TalonSRX(2);
+  WPI_TalonSRX mLeft = new WPI_TalonSRX(1);
+  WPI_TalonSRX mRight = new WPI_TalonSRX(3);
+  WPI_TalonSRX mRightFollow = new WPI_TalonSRX(4);
+  WPI_TalonSRX mLeftFollow = new WPI_TalonSRX(2);
 
-  MotorControllerGroup m_leftGroup = new MotorControllerGroup(m_left, m_leftFollow);
-  MotorControllerGroup m_rightGroup = new MotorControllerGroup(m_right, m_rightFollow);
+  MotorControllerGroup mleftGroup = new MotorControllerGroup(mLeft, mLeftFollow);
+  MotorControllerGroup mrightGroup = new MotorControllerGroup(mRight, mRightFollow);
   
-  DifferentialDrive m_drive = new DifferentialDrive(m_leftGroup, m_rightGroup);
+  DifferentialDrive mDrive = new DifferentialDrive(mLeftGroup, mRightGroup);
   Joystick joy = new Joystick(0);
   final double mult = .6;
 
@@ -51,7 +51,7 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopPeriodic() {
-    m_drive.arcadeDrive(joy.getRawAxis(4)*mult, joy.getRawAxis(1)*mult);
+    mDrive.arcadeDrive(joy.getRawAxis(4)*mult, joy.getRawAxis(1)*mult);
   }
 
   @Override
