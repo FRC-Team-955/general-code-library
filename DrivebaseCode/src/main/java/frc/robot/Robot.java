@@ -24,13 +24,13 @@ public class Robot extends TimedRobot {
 
   WPI_TalonSRX m_left = new WPI_TalonSRX(1);
   WPI_TalonSRX m_right = new WPI_TalonSRX(3);
-  WPI_TalonSRX m_right_follow = new WPI_TalonSRX(4);
-  WPI_TalonSRX m_left_follow = new WPI_TalonSRX(2);
+  WPI_TalonSRX m_rightFollow = new WPI_TalonSRX(4);
+  WPI_TalonSRX m_leftFollow = new WPI_TalonSRX(2);
 
-  MotorControllerGroup m_left_group = new MotorControllerGroup(m_left, m_left_follow);
-  MotorControllerGroup m_right_group = new MotorControllerGroup(m_right, m_right_follow);
+  MotorControllerGroup m_leftGroup = new MotorControllerGroup(m_left, m_leftFollow);
+  MotorControllerGroup m_rightGroup = new MotorControllerGroup(m_right, m_rightFollow);
   
-  DifferentialDrive m_drive = new DifferentialDrive(m_left_group, m_right_group);
+  DifferentialDrive m_drive = new DifferentialDrive(m_leftGroup, m_rightGroup);
   Joystick joy = new Joystick(0);
   final double mult = .6;
 
