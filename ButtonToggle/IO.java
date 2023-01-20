@@ -3,7 +3,40 @@ import edu.wpi.first.wpilibj.Joystick;
 
 public class IO {
 
-public void SwerveMode(Joystick joy0)
+    Joystick joystick  = new joystick(0);
+    
+    boolean toggleOn = false;
+    boolean togglePressed = false;
+
+    public void teleopPeriodic(){
+        updateToggle();
+
+        //if button pressed then do this
+        if (toggleOn){
+            System.out.println("Slow");
+        }
+
+        //If pressed again do this
+        else{
+            System.out.println("Fast");
+        }
+    }
+
+    public void updateToggle(){
+        if(joystick.getRawButton(1)){
+            if(!togglePressed){
+                toggleOn = !toggleOn;
+                togglePressed = true;
+            }
+            else{
+                togglePressed = false;
+            }
+        }
+    }
+
+
+
+// public void SwerveMode(Joystick joy0)
 {
 boolean LeftBumper = joy0.getRawButton(5); 
 int ModeCheck = 0; 
