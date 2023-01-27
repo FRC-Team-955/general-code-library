@@ -10,11 +10,11 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import com.revrobotics.CANSparkMax.IdleMode; 
 import com.revrobotics.CANSparkMaxLowLevel.PeriodicStatus2; 
 
-public class ElevatorTesting {
+public class ElevatorTester {
 private TalonFX ElevatorMotor; 
 private CANSparkMax ElevatorMotorN;
 
-ElevatorTesting(int Elevator_MotorID)
+ElevatorTester(int Elevator_MotorID)
 {
 TalonFX Elevator_Motor = new TalonFX(Elevator_MotorID);
 ElevatorMotor = Elevator_Motor; 
