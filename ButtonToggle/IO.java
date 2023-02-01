@@ -57,4 +57,14 @@ case 2: ModeCheck = 0;
 
 };
 
+public void PipelineSwitch(){ 
+boolean XButton = new joy0.getRawButton(3); 
+if (XButton = true)
+{
+    camera.setPipelineIndex(1);
+
+}
+
+}
+
 };
